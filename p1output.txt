@@ -1,1 +1,5 @@
-
+Enter the coordinates of 1st point x and y as in (x,y):
+2 4
+Enter the coordinates of 2nd point x and y as in (x,y):
+3 6
+The distance between points (2.000000,4.000000) and (3.000000,6.000000) is 2.236068

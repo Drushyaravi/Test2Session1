@@ -1,24 +1,51 @@
 #include <stdio.h>
-#include <math.h>
+
 void input(float *x1,float *y1, float *x2, float *y2)
 {
-  printf("Enter 4 numbers:\n");
-  scanf("%f%f%f%f", x1,y1,x2,y2);
+  printf("Enter the coordinates of 1st point x and y as in (x,y):\n");
+  scanf("%f %f", x1,y1);
+  printf("Enter the coordinates of 2nd point x and y as in (x,y):\n");
+  scanf("%f %f", x2, y2);
 }
-void find_distance(float x1, float y1, float x2, float y2, float *area)
+
+float d_sqrt(float n)
 {
-  *area = sqrt ((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+  float z;
+  double sqrt =0, i, x;
+  i=n/2;
+  while (i<=n/2){
+    x=(i+ n/i)/2;
+    z=x;
+    if(z==i){
+      sqrt=z;
+      return sqrt;
+    }
+    else
+    i=z;
+    
+  }
+  return sqrt;
 }
-void output(float x1, float y1, float x2, float y2, float area)
+
+void find_distance(float x1, float y1, float x2, float y2, float *distance)
 {
-  printf("The distance between print(%f,%f) and (%f,%f) is with %f\n", x1,y1,x2,y2,area);
+  float p,q,r;
+  p=(x1-x2)*(x1-x2);
+  q=(y1-y2)*(y1-y2);
+  r=p+q;
+  *distance=d_sqrt(r);
 }
+
+void output(float x1, float y1, float x2, float y2, float distance)
+{
+  printf("The distance between points (%f,%f) and (%f,%f) is %f\n", x1,y1,x2,y2,distance);
+}
+
 int main()
 {
-  float x1,y1,x2,y2,area;
+  float x1,y1,x2,y2,d;
   input(&x1,&y1,&x2,&y2);
-  float distance;
-  find_distance(x1,y1,x2,y2,&area);
-  output(x1,y1,x2,y2,area);
+  find_distance(x1,y1,x2,y2,&d);
+  output(x1,y1,x2,y2,d);
   return 0;
 }
