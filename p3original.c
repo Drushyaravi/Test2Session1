@@ -26,7 +26,7 @@ void output(int n, int is_prime)
   }
   else
   {
-printf("%d is a prime number\n",n);    
+printf("%d is not a prime number\n",n);    
   }
 }
 int main()
