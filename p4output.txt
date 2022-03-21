@@ -1,1 +1,8 @@
+Enter the number
+5
+the 5th fibonacci number is 3
 
+
+Enter the number
+6
+the 6th fibonacci number is 5 
