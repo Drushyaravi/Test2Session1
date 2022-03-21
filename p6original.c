@@ -1,32 +1,41 @@
-#include <stdio.h>
-#include <string.h>
-int main(int argc, char **argv)
+#include<stdio.h>
+#include<string.h>
+void input_two_string(char *string, char *substring)
 {
-  FILE *fp = fopen(argv[1], "r");
-  int len, i=0, c=0;
-  fseek(fp, 0, SEEK_END);
-  len = ftell(fp);
-  rewind(fp);
-  char ch, arr[len], *p, *q;
-  while((ch=fgetc(fp)) != EOF)
+  printf("Enter the words:\n");
+  scanf("%s %s", string, substring);
+}
+int str_index(char *string, char *substring)
+{
+  int i,k,n;
+  for (i=0; substring[i]!='\0';)// world'\0'
     {
-      arr[i]=ch;
-      i++;
-    }
-  rewind(fp);
-  char a[200];
-
-  while((fgets(a, 200, fp)))
-    {
-      q=a;
-      if((p=strstr(a, arr))!=NULL)
+      for (k=0; string[k]!='\0';)// helloworldhello
+        {
+      if (string[k]==substring[i])
       {
-        while(q!=p)
-          {
-            c++;
-            q++;
-          }
-        printf("c>>%d \n", c);
+        i++;
+        k++;
+        n=k-strlen(substring); //n=10-5->5
       }
+          else
+      {
+        k++;
+      }
+        }
     }
+  return n;
+}
+void output(char *string, char *substring, int index)
+{
+  printf("The index of '%s' in '%s' is %d\n", substring, string, index);
+}
+int main()
+{
+  char a[20], b[20];
+  int n;
+  input_two_string(a,b);
+  n=str_index(a,b);
+  output(a,b,n);
+  return 0;
 }
