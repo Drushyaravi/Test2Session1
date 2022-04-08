@@ -1,1 +1,20 @@
+Enter the first point:
+Enter the coordinates as x and y as in (x,y);
+7
+4
+Enter the second point:
+Enter the coordinates as x and y as in (x,y);
+5
+1
+The length of line with endpoints(7.000000,4.000000) and (5.000000,1.000000) is 3.605551
 
+
+Enter the first point:
+Enter the coordinates as x and y as in (x,y);
+4
+5
+Enter the second point:
+Enter the coordinates as x and y as in (x,y);
+2
+5
+The length of line with endpoints(4.000000,5.000000) and (2.000000,5.000000) is 2.000000
